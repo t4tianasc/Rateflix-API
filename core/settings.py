@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from corsheaders.defaults import deafult_headers
+from corsheaders.defaults import default_headers
 import os
 import environ
 
@@ -64,7 +64,7 @@ CORS_ORIGIN_WHITELIST = (
   'http://127.0.0.1:8080',
 )
 
-CORS_ALLOW_HEADERS = list(deafult_headers) + [
+CORS_ALLOW_HEADERS = list(default_headers) + [
   'contenttype',
 ]
 
