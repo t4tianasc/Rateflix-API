@@ -9,7 +9,7 @@ from .serializers import MovieSerializer
 class MoviesListView(APIView):
   def get(self, request, *args, **kwargs):
     movies = Movie.objects.all()
-    serializer = Movie(movies, many=True)
+    serializer = MovieSerializer(movies, many=True)
 
     return Response(serializer.data)
   
