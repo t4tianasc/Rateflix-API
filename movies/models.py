@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 def user_directory_path(instance, filename):
-  return 'blog/{0}/{1}'.format(instance.title, filename)
+  return 'thumbnails/{0}/{1}'.format(instance.title, filename)
 
 
 class Movie(models.Model):
@@ -22,7 +22,7 @@ class Movie(models.Model):
   )
 
   title = models.CharField(max_length=255)
-  thumbnail = models.ImageField(upload_to=user_directory_path, blank=True, null=True)
+  thumbnail = models.URLField(null=False, blank=False, default="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzfKpE7moB9tkOdWtUSe18WWPr8UxxFOm4BA&usqp=CAU")
   release_date = models.DateField(default=timezone.now)
   genre = models.CharField(max_length=100, choices=MOVIE_GENRES)
   director = models.CharField(max_length=255)
